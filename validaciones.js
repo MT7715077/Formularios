@@ -1,66 +1,52 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-function validarForma(forma){
+function validarForma(forma) {
+//Validamos el usuario
     var usuario = forma.usuario;
-    if (usuario.value == "" ||  usuario.value == "Escribir usurio") {
+    if (usuario.value == "" || usuario.value == "Escribir usuario") {
         alert("Debe proporcionar un nombre de usuario");
         usuario.focus();
         usuario.select();
         return false;
-        
     }
-    var password = forma.apassword;
-    if (password.value == "" ||  password.value.length < 3 ) {
-        alert("Debe prporcionar un password al menos de tres caracateres");
+//Validamos el password
+    var password = forma.password;
+    if (password.value == "" || password.value.length < 3) {
+        alert("Debe proporcionar un password al menos de 3 caracteres");
         password.focus();
         password.select();
         return false;
-        
-        
     }
-    var  tecnologias = forma.tecnologias;
-    var  checkSeleccionado = false;
-    for (var i = 0; i < tecnologias.length; i++) {
-        if (tecnologias[i].checked) {
-            checkSeleccionado = true;
-            
+//Validamos las tecnologias de interes
+    var tecnologias = forma.tecnologia;
+    var checkSeleccionado = false;
+    function validarForma(forma) {
+//Validamos el usuario
+        var usuario = forma.usuario;
+        if (usuario.value == "" || usuario.value == "Escribir usuario") {
+            alert("Debe proporcionar un nombre de usuario");
+            usuario.focus();
+            usuario.select();
+            return false;
         }
-        
-    }
-    if (!checkSeleccionado) {
-        alert("Debe selecionar alguna tecnologia");
-        return false;
-        
-    }
-    var generos = forma.genero;
-    var radioSeleccionado = false;
-    for (var i = 0; i < generos.length; i++) {
-        if (generos[i].checked) {
-            radioSeleccionado = true;
-            
+//Validamos el password
+        var password = forma.password;
+        if (password.value == "" || password.value.length < 3) {
+            alert("Debe proporcionar un password al menos de 3 caracteres");
+            password.focus();
+            password.select();
+            return false;
         }
-        
-        
-    }
-    if (!radioSeleccionado) {
-        alert("El usuario debe sellecionar un genero");
-        return false;
-        
-    }
-    var ocupacion = forma.ocupacion;
-    if (ocupacion.value == "") {
-        alert("Debe seleccionar una ocupacion");
-        return false;
-        
-    }
-    
-    alert("Formulario valido, enviando datos....");
-    return true;
-    
-}
+//Validamos las tecnologias de interes
+        var tecnologias = forma.tecnologia;
+        var checkSeleccionado = false;
 
+//Validamos la ocupacion
+        var ocupacion = forma.ocupacion;
+        if (ocupacion.value == "") {
+            alert("Debe seleccionar una ocupacion");
+            return false;
+        }
+//Formulario validado
+        alert("Formulario valido, enviando datos...");
+        return true;
+    }
+}
